@@ -1,0 +1,10 @@
+.contact-main-div{
+    width: 100%;   
+}
+.contact-page-img-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: -1;
+}
