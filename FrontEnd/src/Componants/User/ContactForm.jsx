@@ -10,19 +10,19 @@ function ContactForm() {
                 </div>
                 <div className="col-md-6 my-5 ">
                     <form action="" className='contact-form'>
-                        <div class="mb-3 ">
+                        <div className="mb-3 ">
                             <h3>Quick Enquiry</h3>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control contact-input-feild" name="" id="" aria-describedby="helpId" placeholder="Name" />
+                        <div className="mb-3">
+                            <input type="text" className="form-control contact-input-feild" name="" id="" aria-describedby="helpId" placeholder="Name" />
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control contact-input-feild" name="" id="" aria-describedby="emailHelpId" placeholder="Email/Phone" />
+                        <div className="mb-3">
+                            <input type="text" className="form-control contact-input-feild" name="" id="" aria-describedby="emailHelpId" placeholder="Email/Phone" />
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control contact-input-feild" name="" id="" rows="3" placeholder='Message' />
+                        <div className="mb-3">
+                            <textarea className="form-control contact-input-feild" name="" id="" rows="3" placeholder='Message' />
                         </div>
-                        <div class="">
+                        <div className="">
                             <button type='submit' className='contact-submit-button btn btn-lg btn-outline-success px-4'>send</button>
                         </div>
                     </form>
