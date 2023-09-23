@@ -1,0 +1,52 @@
+.about-main-div{
+    background-image: url('./assets/office1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-text-div{
+    background-color:rgba(64, 64, 64, 0.8);
+    height: auto;
+    max-width: 70%;
+    margin: 0 auto;
+    color: white;
+    padding: 3%;
+    border-radius: 15px;
+}
+.about-text-div h3{
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: #00acaa;
+    margin-bottom: 20px;
+}
+.about-text-div p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .about-main-div {
+      height: auto; /* Adjust the height for smaller screens */
+      padding: 20px; /* Add some padding for better spacing on smaller screens */
+    }
+  
+    .about-text-div {
+      max-width: 100%; /* Use the full width on smaller screens */
+      padding: 5%; /* Increase padding for better spacing on smaller screens */
+    }
+  
+    .about-text-div h3 {
+      font-size: 28px; /* Reduce font size for better readability on smaller screens */
+    }
+  
+    .about-text-div p {
+      font-size: 16px; /* Reduce font size for better readability on smaller screens */
+    }
+}

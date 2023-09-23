@@ -8,7 +8,7 @@ function ContactForm() {
                 <div className="col-md-6 contact-img-div">
                     <img src="./assets/office.jpg" alt="" className='contact-img' />
                 </div>
-                <div className="col-md-6 my-5 ">
+                <div className="col-md-6 d-flex justify-content-center align-items-center ">
                     <form action="" className='contact-form'>
                         <div className="mb-3 ">
                             <h3>Quick Enquiry</h3>

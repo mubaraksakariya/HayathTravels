@@ -11,13 +11,18 @@ ul{
   font-size: large;
   height: 100%;
 }
+.nav-item a {
+  color: white;
+}
 .Logo-img{
   width: 200px;
+}
+.nav-link.active{
+  color: rgb(249,204,55);
 }
   @media (max-width: 768px) {
     .nav-item{
         font-size:medium;
-        border: black thick;
       }
       .navbar-brand{
         font-size:large;
@@ -28,5 +33,11 @@ ul{
         top: 0;
         width: 100%;
         z-index: 999;
+      }
+      .nav-item a {
+        color: black;
+      }
+      .active{
+        font-weight: bold;
       }
   }

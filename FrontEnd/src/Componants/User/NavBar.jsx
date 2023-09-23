@@ -25,11 +25,15 @@ function NavBar() {
                         >
                             <a className={`nav-link ${pathname === '/' ? 'active' : ''}`} aria-current="page" href="#">Home</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
+                        <li className="nav-item"
+                            onClick={() => navigate('/about')}
+                        >
+                            <a className={`nav-link ${pathname === '/about' ? 'active' : ''}`} href="#">About</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Services</a>
+                        <li className="nav-item"
+                            onClick={() => navigate('/services')}
+                        >
+                            <a className={`nav-link ${pathname === '/services' ? 'active' : ''}`} href="#">Services</a>
                         </li>
                         <li className="nav-item"
                             onClick={() => navigate('/contact')}

@@ -5,6 +5,7 @@ import { Waypoint } from 'react-waypoint';
 import Offers from '../../Componants/User/Offers';
 import ContactForm from '../../Componants/User/ContactForm';
 import Services from '../../Componants/User/Services';
+import Footer from '../../Componants/User/Footer';
 
 function Home() {
     const [hasReachedHalfway, setHasReachedHalfway] = useState(false);
@@ -34,13 +35,13 @@ function Home() {
                 </div>
                 <div className="testimonial-single-div">
                     <img src="./assets/Quatation-mark.png" alt="" className='quatation-mark' />
-                    <p>"What truly sets Hayath Tours and Travels apart <br /> is their passion for travel and their commitment to creating unique and authentic experiences"</p>
-                    <p>- Nishad</p>
+                    <p>"What truly sets Hayath Travel Group apart <br /> is their passion for travel and their commitment to creating unique and authentic experiences"</p>
+                    <p>-Xavior John</p>
+                </div>
+                <div className="home-content-div-2 pt-5">
+                    <Services />
                 </div>
                 <ContactForm />
-                <div className="home-content-div-2">
-                    <Offers />
-                </div>
                 <Waypoint onEnter={manageBgChange} onLeave={manageBgChange} >
                     <div style={{ visibility: 'hidden', height: '0' }}>.</div>
                 </Waypoint>
@@ -55,10 +56,11 @@ function Home() {
                         <button className='btn btn btn-outline-info'>Know more</button>
                     </div>
                 </div>
-                <div className="home-content-div-2 pt-5">
-                    <Services />
+                <div className="home-content-div-2">
+                    <Offers />
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
