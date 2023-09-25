@@ -1,43 +1,42 @@
 .navbar-top-div {
-    background-color:rgba(64, 64, 64, 0.5); 
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-ul{
-  min-height: 100%;
+  background-color:rgba(64, 64, 64, 0.5); 
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 .nav-item{
+  cursor: pointer;
   font-size: large;
   height: 100%;
 }
-.nav-item a {
+.nav-link {
   color: white;
 }
 .Logo-img{
   width: 200px;
 }
-.nav-link.active{
+.current-page{
   color: rgb(249,204,55);
+  font-weight: bold;
 }
-  @media (max-width: 768px) {
-    .nav-item{
-        font-size:medium;
-      }
-      .navbar-brand{
-        font-size:large;
-      }
-      .navbar-top-div {
-        position: static;
-        background-color: rgba(255, 255, 255, 255); 
-        top: 0;
-        width: 100%;
-        z-index: 999;
-      }
-      .nav-item a {
-        color: black;
-      }
-      .active{
-        font-weight: bold;
-      }
-  }
+@media (max-width: 768px) {
+  .nav-item{
+      font-size:medium;
+    }
+    .navbar-brand{
+      font-size:large;
+    }
+    .navbar-top-div {
+      position: static;
+      background-color: rgba(255, 255, 255, 255); 
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+    .nav-item a {
+      color: black;
+    }
+    .active{
+      font-weight: bold;
+    }
+}

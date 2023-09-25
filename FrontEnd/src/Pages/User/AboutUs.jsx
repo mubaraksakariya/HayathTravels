@@ -9,12 +9,23 @@ function AboutUs() {
                 <NavBar />
             </div>
             <div className="about-main-div">
-                <div className='about-text-div'>
-                    <h3>About Us</h3>
-                    <p>
-                        Welcome to Hayath Travels Pvt Limited, a distinguished establishment with years of excellence. We are renowned specialists in meticulously curating tailored Umrah and Hajj pilgrimages, complemented by a comprehensive portfolio of exclusive tour packages and streamlined visa services. Our unwavering commitment is to transmute your travel aspirations into meticulously orchestrated experiences, delivering distinctive sojourns and ensuring a seamless visa acquisition process. Engage with us to immerse yourself in the grand tapestry of global wonders, meticulously craft indelible memories, and embark on transcendent journeys of a lifetime.
-
-                    </p>
+                <h3>ABOUT US</h3>
+            </div>
+            <div className='about-content-div'>
+                <div className="row">
+                    <div className="col-md-6 about-content-1">
+                        <div className="about-content-text">
+                            <h3>Who We Are?</h3>
+                            <p>
+                                Welcome to Hayath Travels Pvt Limited, a distinguished establishment with a long-standing tradition of excellence. We are renowned specialists in curating bespoke Umrah and Hajj pilgrimages, offering an extensive range of exclusive tour packages and efficient visa services. Our unwavering commitment is to transform your travel dreams into carefully planned experiences, providing unique journeys and a seamless visa application process. Join us to explore the rich tapestry of global wonders, create unforgettable memories, and embark on journeys of a lifetime
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-md-6 about-content-2">
+                        <div className="about-content-img">
+                            <img src="./assets/aboutus1.jpg" alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />

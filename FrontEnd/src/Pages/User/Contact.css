@@ -4,92 +4,94 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    position: relative;
-    width: 100%;
-    min-height: 100dvh;
+	background-color: rgb(56, 56, 56,0.8);
+	background-blend-mode: overlay;
+    height: 80dvh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.contact-main-div h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 89.6px;
 }
 .nav-bar{
     position: absolute;
     width: 100%;
 }
-.contact-page-img-1{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100dvw;
-    z-index: -1;
+.contact-content-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6% 0 6% 0;
 }
-.contact-container{
-    /* position: absolute; */
-    width: 60%;
-    margin: 5% 0 0 0;
+.form-header{
+    margin-bottom: 50px;
 }
-.contact-form-div{
-    margin: 0 0 0 0;
-    background-color: rgb(39,42,52,0.8);
-    color: rgb(147,149,154);
-    border-radius: 15px 0 0 15px;
+.contact-content-div h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 47.6px;
+    color: rgb(25, 25, 25);
 }
 .contact-form-div form{
-    padding: 10%;
+    padding: 5%;
 }
 .custom-input{
     width: 100%;
-    background-color: rgb(39, 42, 52,0.8);
-    color: white;
     border: none; /* Remove default borders */
     border-bottom: 1px solid rgb(147, 149, 154); /* Add a bottom border */
-    outline: none; /* Remove the outline when focused (for better aesthetics) */
     padding: 10px; /* Adjust padding as needed */
     transition: border-color 0.3s ease; 
 }
-.custom-input:focus {
-    background-color: rgb(39, 42, 52,0.8);
-    box-shadow: none;
-    border-bottom: 1px solid rgb(255, 255, 255); /* Change the bottom border when focused */
-}
-.custom-input::placeholder {
-    color: rgb(147, 149, 154); /* Placeholder text color */
-}
-.address-div-container{
-    background-color: rgb(28,30,37,0.95);
-    border-radius: 0 15px 15px 0;
+.contact-submit-btn{
+    border-radius: 25px;
 }
 .address-div{
-    padding: 10%;
-    color: white;
-    min-height: 100%;
-    
+    padding: 5%;
 }
 .address-div p{
     color: rgb(123, 118, 114);
 }
-.address-items{
-    display: flex;
+.address-items h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28.8px;
+    color: rgb(5, 5, 5);
 }
-.address-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.address-items p{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27.2px;
+    color: rgb(64, 64, 64);
 }
-.icon-div{
-    min-height: 45px;
-    max-height: 45px;
-    min-width: 45px;
+.socials{
+    padding-top: 2%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 2%;
+}
+.icon-round-div{
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    background-color: rgb(32,34,41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,172,170);
+    transition: background-color 0.3s ease;
 }
-/* .footer-container{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-} */
+.icon-round-div:hover {
+    background-color: rgb(48,48,48); /* Change the background color on hover */
+}
+.icon-round-div i{
+   font-size: 24px;
+   color: white;
+}
 @media (max-width: 768px) {
     .nav-bar{
         position: relative;
@@ -100,6 +102,12 @@
         padding: 0;
         margin: 0 0 0 0;
        
+    }
+    .contact-main-div h3{
+        font-size: 28px;
+    }
+    .contact-content-div h3{
+        font-size: 23px;
     }
     .contact-form-div{
         border-radius: 0;

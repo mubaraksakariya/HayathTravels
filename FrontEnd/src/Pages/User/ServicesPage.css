@@ -3,25 +3,57 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-blend-mode: overlay;
     background-position: center center;
-    background-color: rgb(56, 56, 56,0.5);
+    background-color: rgb(56, 56, 56,0.8);
+    background-blend-mode: overlay;
+    height: 80dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .services-main-div h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 89.6px;
+    color: rgb(255, 255, 255);
+}
+.services-page-header{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.service-description-div{
+    padding: 4% 15% 4% 15%;
+    background-color: rgb(222, 217, 217);
+}
+.service-description-div h4{
+    padding-bottom: 1%;
     text-align: center;
-    font-weight: 900;
-    font-size:3rem;
-    padding: 2% 0 0 0 ;
-    color: rgb(0,172,170);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 47.6px;
+    color: rgb(25, 25, 25);
+}
+.service-description-div p{
+    padding-top: 2%;
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 27.2px;
+    color: rgb(64, 64, 64);
 }
 .wrap
 {
-  margin:50px auto 0 auto;
-  width:100%;
-  display:flex;
-  flex-wrap: wrap;
-  align-items:space-around;
-  max-width:1200px;
+    margin:50px auto 50px auto;
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:space-around;
+    max-width:1200px;
 }
 .tile
 {
@@ -100,7 +132,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:translateX(0);
   opacity:1;
 }
-.dots
+/* .dots
 {
     
   position:absolute;
@@ -116,7 +148,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   justify-content:space-around;
   display: none;
   
-}
+} */
 /* 
 .dots span
 {
@@ -152,6 +184,14 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 
 
 @media (max-width: 1000px) {
+    .services-main-div{
+        height: 50dvh;
+        background-position: right bottom;
+    }
+    .services-main-div h3{
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
   .wrap {
     flex-direction: column;
     padding: 0 0 0 0;

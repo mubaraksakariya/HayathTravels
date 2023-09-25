@@ -23,22 +23,22 @@ function NavBar() {
                         <li className="nav-item"
                             onClick={() => navigate('/')}
                         >
-                            <a className={`nav-link ${pathname === '/' ? 'active' : ''}`} aria-current="page" href="#">Home</a>
+                            <a className={`nav-link ${pathname === '/' ? 'current-page' : ''}`} aria-current="page">Home</a>
                         </li>
                         <li className="nav-item"
                             onClick={() => navigate('/about')}
                         >
-                            <a className={`nav-link ${pathname === '/about' ? 'active' : ''}`} href="#">About</a>
+                            <a className={`nav-link ${pathname === '/about' ? 'current-page' : ''}`}>About</a>
                         </li>
                         <li className="nav-item"
                             onClick={() => navigate('/services')}
                         >
-                            <a className={`nav-link ${pathname === '/services' ? 'active' : ''}`} href="#">Services</a>
+                            <a className={`nav-link ${pathname === '/services' ? 'current-page' : ''}`}>Services</a>
                         </li>
                         <li className="nav-item"
                             onClick={() => navigate('/contact')}
                         >
-                            <a className={`nav-link ${pathname === '/contact' ? 'active' : ''}`} href="#">Contact</a>
+                            <a className={`nav-link ${pathname === '/contact' ? 'current-page' : ''}`}>Contact</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Gallery</a>
