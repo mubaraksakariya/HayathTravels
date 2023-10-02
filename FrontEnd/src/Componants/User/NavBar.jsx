@@ -40,8 +40,10 @@ function NavBar() {
                         >
                             <a className={`nav-link ${pathname === '/contact' ? 'current-page' : ''}`}>Contact</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Gallery</a>
+                        <li className="nav-item"
+                            onClick={() => navigate('/gallery')}
+                        >
+                            <a className={`nav-link ${pathname === '/gallery' ? 'current-page' : ''}`} href="#">Gallery</a>
                         </li>
                     </ul>
                 </div>

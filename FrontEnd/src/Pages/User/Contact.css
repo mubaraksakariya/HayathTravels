@@ -93,6 +93,9 @@
    color: white;
 }
 @media (max-width: 768px) {
+    .contact-main-div{
+        height: 50dvh;
+    }
     .nav-bar{
         position: relative;
         width: 100%;

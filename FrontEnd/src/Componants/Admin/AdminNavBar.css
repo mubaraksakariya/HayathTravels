@@ -1,0 +1,10 @@
+.sign-out-btn{
+    position: absolute;
+    right: 10px;
+}
+
+@media (max-width:768px){
+    .sign-out-btn{
+        position: relative;
+    }
+}

@@ -12,7 +12,7 @@ function AboutUs() {
                 <h3>ABOUT US</h3>
             </div>
             <div className='about-content-div'>
-                <div className="row">
+                <div className="row about-us-row">
                     <div className="col-md-6 about-content-1">
                         <div className="about-content-text">
                             <h3>Who We Are?</h3>

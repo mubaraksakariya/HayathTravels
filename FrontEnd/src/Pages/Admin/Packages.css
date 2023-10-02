@@ -1,0 +1,16 @@
+.package-img-div{
+    border: solid grey thin;
+    margin: 1% 1% 1% 1%;
+}
+.package-img-div img{
+    width: 100%;
+    object-fit: contain;
+}
+.package-header-div{
+    width: 100%;
+}
+.package-menu-div{
+    padding: 2%;
+    display: flex;
+    justify-content: end;
+}

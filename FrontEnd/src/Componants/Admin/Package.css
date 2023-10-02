@@ -1,0 +1,13 @@
+.dropdown-btn{
+    max-width: 1px;
+    background-color: transparent;
+    border: 0;
+}
+.dropdown-btn:focus{
+    background-color: transparent;
+    
+}
+.package-menu{
+    position: absolute;
+    right: 0;
+}

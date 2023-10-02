@@ -1,0 +1,31 @@
+.close-btn{
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    background-blend-mode:luminosity ;
+}
+.card-container{
+    padding: 2%;
+    margin: 0 0 0 0;
+}
+.card{
+    max-width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    transition: 100ms;
+}
+.card:hover{
+    box-shadow: 0px 0px 0px 10px rgba(255, 253, 253, 0.2);
+}
+.card img{
+    width: 100%;
+}
+.image-input button{
+    background-color: black;
+}
+.uploadProgress{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

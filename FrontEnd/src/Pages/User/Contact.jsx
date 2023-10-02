@@ -13,33 +13,33 @@ function Contact() {
                 <h3>CONTACT US</h3>
             </div>
             <div className="contact-content-div">
-                <div class="row justify-content-center">
-                    <div class="col-md contact-form-div">
+                <div className="row justify-content-center">
+                    <div className="col-md contact-form-div">
                         <form>
-                            <div class="form-header">
-                                <h3 class="mb-3">WE'RE READY, LET'S TALK.</h3>
+                            <div className="form-header">
+                                <h3 className="mb-3">WE'RE READY, LET'S TALK.</h3>
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="custom-input" placeholder='Name' />
+                            <div className="mb-3">
+                                <input type="text" className="custom-input" placeholder='Name' />
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="custom-input" placeholder='Email/Phone' />
+                            <div className="mb-3">
+                                <input type="text" className="custom-input" placeholder='Email/Phone' />
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="custom-input" placeholder='Subject' />
+                            <div className="mb-3">
+                                <input type="text" className="custom-input" placeholder='Subject' />
                             </div>
-                            <div class="mb-3">
-                                <textarea name="" id="" rows="5" class="custom-input" placeholder='Message' ></textarea>
+                            <div className="mb-3">
+                                <textarea name="" id="" rows="5" className="custom-input" placeholder='Message' ></textarea>
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <button type='submit' className='contact-submit-btn btn btn-lg btn-warning px-4'>Send Message</button>
                             </div>
                         </form>
                     </div>
-                    <div class="col-md address-div-container">
+                    <div className="col-md address-div-container">
                         <div className="address-div">
                             <h3>CONTACT INFO</h3>
-                            <p>We're open for any suggestion or just to have a chat</p>
+                            {/* <p>We're open for any suggestion or just to have a chat</p> */}
                             <div className='address-items'>
                                 <h4 className=''>Address</h4>
                                 <p>1st Floor MPH Tower <br /> Opposite Bharat petroleum Edavanna 676541</p>
@@ -56,13 +56,13 @@ function Contact() {
                                 <h4 className=''>Follow Us</h4>
                                 <div className="socials">
                                     <div className="icon-round-div">
-                                        <i class="bi bi-facebook"></i>
+                                        <i className="bi bi-facebook"></i>
                                     </div>
                                     <div className="icon-round-div">
-                                        <i class="bi bi-instagram"></i>
+                                        <i className="bi bi-instagram"></i>
                                     </div>
                                     <div className="icon-round-div">
-                                        <i class="bi bi-twitter"></i>
+                                        <i className="bi bi-twitter"></i>
                                     </div>
                                 </div>
                             </div>

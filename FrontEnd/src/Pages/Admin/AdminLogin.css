@@ -1,0 +1,20 @@
+.Login-top-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-color: black;
+}
+.login-form-header{
+    margin: 0 0 10% 0;
+}
+.login-input{
+    width: 100%;
+    margin: 2% 0 2% 0;
+    padding: 1%;
+}
+@media (max-width: 768px) {
+    .login-main-div{
+        margin: 0 2% 0 2%;
+    }
+}

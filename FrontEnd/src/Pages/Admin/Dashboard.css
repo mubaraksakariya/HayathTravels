@@ -1,0 +1,11 @@
+.main-div{
+    min-height: 100dvh;
+    background-color: black;
+
+}
+.admin-page-logo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './Home.css'
 import NavBar from '../../Componants/User/NavBar'
 import { Waypoint } from 'react-waypoint';
@@ -6,17 +6,20 @@ import Offers from '../../Componants/User/Offers';
 import ContactForm from '../../Componants/User/ContactForm';
 import Services from '../../Componants/User/Services';
 import Footer from '../../Componants/User/Footer';
+import { useNavigate } from 'react-router-dom';
+import { FirebaseContext } from '../../Context/FirebaseContext';
 
 function Home() {
     const [hasReachedHalfway, setHasReachedHalfway] = useState(false);
     const backGroundimgRef = useRef()
+    const navigate = useNavigate()
     const manageBgChange = ({ previousPosition, currentPosition, event }) => {
         if (currentPosition === 'below') setHasReachedHalfway(false)
         else setHasReachedHalfway(true)
     }
     useEffect(() => {
         if (hasReachedHalfway) {
-            backGroundimgRef.current.style.backgroundImage = 'url(./assets/FrontPageimage6.jpg)'
+            backGroundimgRef.current.style.backgroundImage = 'url(./assets/FrontPageimage8.jpg)'
         } else {
             // Set the background image URL when scrolling is before halfway
             backGroundimgRef.current.style.backgroundImage = 'url(./assets/FrontPageimage7.jpg)';
@@ -41,19 +44,22 @@ function Home() {
                 <div className="home-content-div-2 pt-5">
                     <Services />
                 </div>
-                <ContactForm />
                 <Waypoint onEnter={manageBgChange} onLeave={manageBgChange} >
                     <div style={{ visibility: 'hidden', height: '0' }}>.</div>
                 </Waypoint>
+                <ContactForm />
+
                 <div className='home-content-div-3'>
                     <div>
-                        <h1>
+                        <h1 className='mb-4'>
                             EXPLORE THE WORLD
                         </h1>
-                        <p className=''>
-                            Diremit mundi mare undae nunc mixtam tanto sibi. Nubes unda concordi. Fert his. Recessit mentes praecipites locum caligine sui egens erat. Silvas caeli regna.
+                        <p className='mb-4'>
+                            Each journey is a masterpiece of experiences, woven together with threads of discovery, creating a tapestry of memories that linger in the soul's gallery forever.
                         </p>
-                        <button className='btn btn btn-outline-info'>Know more</button>
+                        <a className='btn btn-lg btn-outline-info'
+                            onClick={() => navigate('/services')}
+                        >Know more</a>
                     </div>
                 </div>
                 <div className="home-content-div-2">
