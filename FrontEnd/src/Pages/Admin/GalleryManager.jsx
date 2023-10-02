@@ -10,6 +10,7 @@ function GalleryManager() {
     const [folders, setFolders] = useState([])
     const [viewFolder, setViewFolder] = useState(folders[0])
 
+
     const createNewFolder = async (e) => {
         e.preventDefault()
         const folderName = e.target.folder_name.value
@@ -44,6 +45,7 @@ function GalleryManager() {
 
         fetchData()
     }, [])
+
     useEffect(() => {
         setViewFolder(folders[0])
     }, [folders])
@@ -52,9 +54,11 @@ function GalleryManager() {
             <AdminNavBar />
             <div className="main-div">
                 <div className="folders-div">
-                    <button className="add-new-folder" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <i className="bi bi-plus-square-fill"></i>
-                    </button>
+                    <div className="add-new-folder">
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i className="bi bi-plus-square-fill"></i>
+                        </button>
+                    </div>
                     {
                         folders.map(folder => {
                             return (
