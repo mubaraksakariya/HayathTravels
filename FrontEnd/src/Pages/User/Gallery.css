@@ -1,9 +1,68 @@
+.gallery-main-div{
+    background-image: url("assets/gallery.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+	background-color: rgb(56, 56, 56,0.8);
+	background-blend-mode: overlay;
+    height: 80dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-main-div h3{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 89.6px;
+}
 .gallery-content-div{
-    margin: 6% 10% 6% 10%;
+    margin: 6% 8% 6% 8%;
+}
+.gallery-div {
+    display: flex;
+    height: 60dvh;
+}
+.folder-selection-div {
+    flex: 1; 
+    max-width: 200px; 
+    height: 100%; 
+    overflow-y: auto; 
 }
 
+.slide-show-div {
+    flex: 3; 
+    height: 100%;
+    overflow: hidden;
+}
+
+
 @media (max-width: 768px) {
+    .gallery-main-div{
+        height: 50dvh;
+    }
+    .gallery-main-div h3{
+        font-size: 28px;
+    }
     .gallery-content-div{
         margin: 6% 0% 6% 0%;
+    }
+
+    .gallery-div {
+        flex-direction: column; /* Arrange children vertically for smaller screens */
+    }
+
+    .slide-show-div {
+        order: -1; /* Move .slide-show-div to the top */
+        height: 50vh; /* Set a specific height for .slide-show-div on smaller screens */
+    }
+
+    .folder-selection-div {
+        max-width: none; /* Remove the maximum width for .folder-selection-div on smaller screens */
+        width: 100%; /* Take full width on smaller screens */
+        height: 50vh; /* Set a specific height for .folder-selection-div on smaller screens */
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
     }
 }

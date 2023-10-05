@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import NavBar from '../../Componants/User/NavBar'
 
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useFirebaseDb } from '../../Context/FirebaseContext'
 import ImageSwiper from '../../Componants/User/ImageSwiper';
 import Footer from '../../Componants/User/Footer';
@@ -36,19 +36,26 @@ function Gallery() {
             <div className='nav-bar'>
                 <NavBar />
             </div>
-            <div className="contact-main-div">
+            <div className="gallery-main-div">
                 <h3>GALLERY</h3>
             </div>
             <div className="gallery-content-div">
-                <FolderThumpnail folders={folders} setFolderView={setFolderView} />
-                {/* <div className="folder-selection-div">
-                    {folders.map((folder => {
-                        return (
-                            <FolderThumpnail folder={folder} key={folder.id} setFolderView={setFolderView} />
-                        )
-                    }))}
-                </div> */}
-                <ImageSwiper folder={folderVIew} />
+                <div className="gallery-div">
+                    <div className='folder-selection-div'>
+                        {
+                            folders.map(folder => {
+                                return (
+                                    <FolderThumpnail folder={folder} setFolderView={setFolderView} />
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="slide-show-div">
+                        <div>
+                            <ImageSwiper folder={folderVIew} />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="footer-container">
                 <Footer />
