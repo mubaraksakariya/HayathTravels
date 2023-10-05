@@ -1,16 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import NavBar from '../../Componants/User/NavBar'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax, Thumbs } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/parallax';
-import 'swiper/css/thumbs';
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { useFirebaseDb } from '../../Context/FirebaseContext'
+import ImageSwiper from '../../Componants/User/ImageSwiper';
+import Footer from '../../Componants/User/Footer';
+import FolderThumpnail from '../../Componants/User/FolderThumpnail';
+
 function Gallery() {
+    const db = useFirebaseDb()
+    const [folders, setFolders] = useState([])
+    const [folderVIew, setFolderView] = useState(0)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let querySnapshot = await getDocs(collection(db, 'Gallery_Folders'))
+                const folderArray = [];
+                querySnapshot.forEach((fold) => {
+                    folderArray.push({ id: fold.id, ...fold.data() });
+                });
+                setFolders(folderArray)
+            } catch (error) {
+                console.error('Error fetching folder: ', error);
+            }
+        }
+
+        fetchData()
+    }, [])
+    useEffect(() => {
+        setFolderView(folders[0])
+    }, [folders])
     return (
         <>
             <div className='nav-bar'>
@@ -19,30 +39,19 @@ function Gallery() {
             <div className="contact-main-div">
                 <h3>GALLERY</h3>
             </div>
-            <div className="contact-content-div">
-                <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Parallax, Thumbs]}
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    navigation
-                    Parallax
-                    Thumbs={true}
-                    pagination={{ clickable: true }}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
-                    <SwiperSlide>Slide 10</SwiperSlide>
-                    <SwiperSlide>Slide 11</SwiperSlide>
-                    ...
-                </Swiper>
+            <div className="gallery-content-div">
+                <FolderThumpnail folders={folders} setFolderView={setFolderView} />
+                {/* <div className="folder-selection-div">
+                    {folders.map((folder => {
+                        return (
+                            <FolderThumpnail folder={folder} key={folder.id} setFolderView={setFolderView} />
+                        )
+                    }))}
+                </div> */}
+                <ImageSwiper folder={folderVIew} />
+            </div>
+            <div className="footer-container">
+                <Footer />
             </div>
         </>
     )

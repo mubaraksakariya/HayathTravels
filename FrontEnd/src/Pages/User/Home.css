@@ -27,7 +27,7 @@ body, p, h1, h2, h3, h4, h5, h6, a {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.front-page-text-div h1,h3{
+.front-page-text-div h1, h3{
     color:white;
     font-family: 'Montserrat', sans-serif;
 }

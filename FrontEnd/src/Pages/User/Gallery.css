@@ -1,0 +1,9 @@
+.gallery-content-div{
+    margin: 6% 10% 6% 10%;
+}
+
+@media (max-width: 768px) {
+    .gallery-content-div{
+        margin: 6% 0% 6% 0%;
+    }
+}

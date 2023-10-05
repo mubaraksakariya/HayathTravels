@@ -4,12 +4,12 @@ import AdminNavBar from '../../Componants/Admin/AdminNavBar'
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { useFirebaseDb } from '../../Context/FirebaseContext'
 import FolderManager from '../../Componants/Admin/FolderManager';
+import Folder from '../../Componants/Admin/Folder';
 
 function GalleryManager() {
     const db = useFirebaseDb()
     const [folders, setFolders] = useState([])
     const [viewFolder, setViewFolder] = useState(folders[0])
-
 
     const createNewFolder = async (e) => {
         e.preventDefault()
@@ -62,15 +62,7 @@ function GalleryManager() {
                     {
                         folders.map(folder => {
                             return (
-                                <div className="folder" key={folder.id}
-                                    onClick={() => { setViewFolder(folder) }}
-                                >
-                                    <i className="bi bi-folder-fill"></i>
-                                    <div className='folder-text'>
-                                        <h6>{folder.folderName}</h6>
-                                        <p>{folder.numberOfImages} photos</p>
-                                    </div>
-                                </div>
+                                <Folder setViewFolder={setViewFolder} folder={folder} key={folder.id} />
                             )
                         })
                     }

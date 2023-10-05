@@ -12,6 +12,9 @@
     margin: 0 0 0 0;
 }
 .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
     overflow: hidden;
     aspect-ratio: 1/1;
