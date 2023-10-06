@@ -8,10 +8,13 @@ import Slider from "react-slick";
 import { useFirebaseDb } from '../../Context/FirebaseContext'
 import { query, where, collection, getDocs } from "firebase/firestore";
 
-function ImageSwiper({ folder }) {
+function ImageSwiper({ folder, setSlideShowBg }) {
     const db = useFirebaseDb()
     const [folderImages, setFolderImages] = useState([])
 
+    const slideChange = (index) => {
+        setSlideShowBg(folderImages[index].imageUrl)
+    }
     useEffect(() => {
         const getFiles = async () => {
             const q = query(collection(db, "Gallery"), where("folderId", "==", folder.id));
@@ -24,6 +27,9 @@ function ImageSwiper({ folder }) {
         }
         folder && getFiles()
     }, [folder])
+    useEffect(() => {
+        if (folderImages.length > 0) { setSlideShowBg(folderImages[0].imageUrl) }
+    }, [folderImages])
 
     const settings = {
         dots: true,
@@ -53,6 +59,7 @@ function ImageSwiper({ folder }) {
                 className='slider-inner'
                 lazyLoad='progressive'
                 centerPadding='0px'
+                afterChange={slideChange}
             >
                 {
                     folderImages.map((file) => {

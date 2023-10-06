@@ -12,6 +12,7 @@ function Gallery() {
     const db = useFirebaseDb()
     const [folders, setFolders] = useState([])
     const [folderVIew, setFolderView] = useState(0)
+    const [slideSHowBg, setSlideShowBg] = useState(null)
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -28,6 +29,9 @@ function Gallery() {
 
         fetchData()
     }, [])
+    const divStyle = {
+        backgroundImage: `url(${slideSHowBg})`,
+    };
     useEffect(() => {
         setFolderView(folders[0])
     }, [folders])
@@ -39,20 +43,20 @@ function Gallery() {
             <div className="gallery-main-div">
                 <h3>GALLERY</h3>
             </div>
-            <div className="gallery-content-div">
+            <div className="gallery-content-div" style={divStyle}>
                 <div className="gallery-div">
                     <div className='folder-selection-div'>
                         {
                             folders.map(folder => {
                                 return (
-                                    <FolderThumpnail folder={folder} setFolderView={setFolderView} />
+                                    <FolderThumpnail folder={folder} setFolderView={setFolderView} key={folder.id} />
                                 )
                             })
                         }
                     </div>
                     <div className="slide-show-div">
                         <div>
-                            <ImageSwiper folder={folderVIew} />
+                            <ImageSwiper folder={folderVIew} setSlideShowBg={setSlideShowBg} />
                         </div>
                     </div>
                 </div>

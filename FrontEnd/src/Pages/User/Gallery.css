@@ -19,21 +19,53 @@
     line-height: 89.6px;
 }
 .gallery-content-div{
-    margin: 6% 8% 6% 8%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4%;
+}
+.gallery-content-div::before{
+    position: absolute;
+    z-index: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(4, 4, 4, 0.6);
+    backdrop-filter: blur(3px);
 }
 .gallery-div {
     display: flex;
-    height: 60dvh;
+    gap: 1%;
+    height:85dvh;
+    padding: 4%;
 }
 .folder-selection-div {
     flex: 1; 
-    max-width: 200px; 
-    height: 100%; 
-    overflow-y: auto; 
+    height: 100%;
+    overflow-y: auto;
+}
+.folder-selection-div::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.folder-selection-div::-webkit-scrollbar{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.folder-selection-div::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(249,204,55);
 }
 
 .slide-show-div {
-    flex: 3; 
+    flex: 5; 
     height: 100%;
     overflow: hidden;
 }
@@ -53,16 +85,28 @@
     .gallery-div {
         flex-direction: column; /* Arrange children vertically for smaller screens */
     }
-
+    .folder-selection-div {
+        flex: 1; 
+        height: 100%;
+        overflow-y: auto;
+    }
     .slide-show-div {
         order: -1; /* Move .slide-show-div to the top */
+        flex: 5;
         height: 50vh; /* Set a specific height for .slide-show-div on smaller screens */
     }
 
     .folder-selection-div {
-        max-width: none; /* Remove the maximum width for .folder-selection-div on smaller screens */
-        width: 100%; /* Take full width on smaller screens */
-        height: 50vh; /* Set a specific height for .folder-selection-div on smaller screens */
-        overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+        max-width: none; 
+        width: 100%;
+        display: flex;
+        overflow-y: scroll; 
+    }
+    .gallery-content-div{
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
     }
 }
