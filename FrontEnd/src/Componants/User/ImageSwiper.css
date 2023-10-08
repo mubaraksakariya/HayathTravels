@@ -1,19 +1,15 @@
-.carousel-main-div {
-    width: 60%;
-    margin: 0 auto;
-}
 .arrow{
-    color: rgb(6, 101, 99);
+    color: rgb(249,204,55);
     font-size: x-large;
     position: absolute;
-    top: 35%;
+    top: 45%;
     z-index: 10;
     cursor: pointer;
     transition: 100ms;
 }
 .arrow:hover{
     font-size: xx-large;
-    color: rgb(0,172,170);
+    color: rgb(255, 196, 1);
 }
 .prev{
     left: 1%;
@@ -46,14 +42,14 @@
     .carousel-main-div {
         width: 100%;
     }
+    .arrow{
+        top: 45%;
+    }
     .arrow:hover{
         font-size: x-large;
-        color: rgb(0,172,170);
     }
     .dots-navigator{
         visibility: hidden;
     }
-    .dots-navigator li{
-        display: inline;
-    }
+
 }

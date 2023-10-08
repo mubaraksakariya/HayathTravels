@@ -29,9 +29,6 @@ function Gallery() {
 
         fetchData()
     }, [])
-    const divStyle = {
-        backgroundImage: `url(${slideSHowBg})`,
-    };
     useEffect(() => {
         setFolderView(folders[0])
     }, [folders])
@@ -43,7 +40,8 @@ function Gallery() {
             <div className="gallery-main-div">
                 <h3>GALLERY</h3>
             </div>
-            <div className="gallery-content-div" style={divStyle}>
+            <div className="gallery-content-div" >
+                <img src={slideSHowBg} alt="" className='gallery-bg-img' />
                 <div className="gallery-div">
                     <div className='folder-selection-div'>
                         {
@@ -55,7 +53,7 @@ function Gallery() {
                         }
                     </div>
                     <div className="slide-show-div">
-                        <div>
+                        <div className='slide-show'>
                             <ImageSwiper folder={folderVIew} setSlideShowBg={setSlideShowBg} />
                         </div>
                     </div>

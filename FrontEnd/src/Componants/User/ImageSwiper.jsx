@@ -13,7 +13,7 @@ function ImageSwiper({ folder, setSlideShowBg }) {
     const [folderImages, setFolderImages] = useState([])
 
     const slideChange = (index) => {
-        setSlideShowBg(folderImages[index].imageUrl)
+        setSlideShowBg(folderImages[index]?.imageUrl)
     }
     useEffect(() => {
         const getFiles = async () => {
@@ -28,13 +28,13 @@ function ImageSwiper({ folder, setSlideShowBg }) {
         folder && getFiles()
     }, [folder])
     useEffect(() => {
-        if (folderImages.length > 0) { setSlideShowBg(folderImages[0].imageUrl) }
+        if (folderImages.length > 0) { setSlideShowBg(folderImages[0]?.imageUrl) }
     }, [folderImages])
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 400,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
@@ -57,7 +57,6 @@ function ImageSwiper({ folder, setSlideShowBg }) {
                 autoplaySpeed={4000}
                 centerMode
                 className='slider-inner'
-                lazyLoad='progressive'
                 centerPadding='0px'
                 afterChange={slideChange}
             >

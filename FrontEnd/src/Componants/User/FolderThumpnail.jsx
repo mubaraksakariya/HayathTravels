@@ -1,19 +1,27 @@
-import React, { useEffect } from 'react'
-import './FolderThumpnail.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './FolderThumpnail.css';
 
-function FolderThumpnail({ folder, setFolderView }) {
+const FolderThumpnail = ({ folder, setFolderView }) => {
     const divStyle = {
         backgroundImage: `url(${folder.thumpnail})`,
     };
 
-    return (
-        <div className="folder-thumb-div" style={divStyle}
-            onClick={() => { setFolderView(folder) }}
-        >
-            {/* <h4>{folder.folderName}</h4> */}
-            <h4 className='folder-thumb-h4'>Inaguration</h4>
-        </div>
-    )
-}
+    const handleFolderClick = () => {
+        setFolderView(folder);
+    };
 
-export default FolderThumpnail
+    return (
+        <div className="folder-thumb-div" style={divStyle} onClick={handleFolderClick}>
+            <div className="folder-overlay"></div>
+            <h4 className='folder-thumb-h4'>Inauguration</h4>
+        </div>
+    );
+};
+
+FolderThumpnail.propTypes = {
+    folder: PropTypes.object.isRequired,
+    setFolderView: PropTypes.func.isRequired,
+};
+
+export default FolderThumpnail;
