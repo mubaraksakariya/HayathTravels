@@ -25,8 +25,14 @@
 .contact-content-div{
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 6% 0 6% 0;
+}
+.contact-top-div{
+    width: 70%;
+    gap: 8%;
+}
+.contact-form-div{
+    
 }
 .form-header{
     margin-bottom: 50px;
@@ -51,7 +57,11 @@
 .contact-submit-btn{
     border-radius: 25px;
 }
+.address-div-container{
+    
+}
 .address-div{
+    height: 100%;
     padding: 5%;
 }
 .address-div p{

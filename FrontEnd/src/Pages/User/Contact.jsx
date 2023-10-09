@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import './Contact.css'
 import NavBar from '../../Componants/User/NavBar'
 import Footer from '../../Componants/User/Footer'
@@ -13,7 +13,7 @@ function Contact() {
                 <h3>CONTACT US</h3>
             </div>
             <div className="contact-content-div">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center align-items-start contact-top-div">
                     <div className="col-md contact-form-div">
                         <form>
                             <div className="form-header">
