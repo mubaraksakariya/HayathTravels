@@ -59,7 +59,7 @@ function Services() {
 
 		observerRef.current = new IntersectionObserver(handleIntersection, {
 			root: null,
-			rootMargin: '0px',
+			rootMargin: '-5px',
 			threshold: 0,
 		});
 

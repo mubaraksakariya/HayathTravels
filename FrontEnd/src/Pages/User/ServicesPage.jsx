@@ -6,38 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 function ServicesPage() {
 	const navigate = useNavigate();
-	const navigateToPage = (location) => {
-		switch (location) {
-			case 'Visa-Services': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
-			case 'International-Flights': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
-			case 'Corporate-Travel-Desk': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
-			case 'Luxury-Cruises': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
-			case 'Attestation Services': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
-			case 'Cab-Service': {
-				console.log('visa');
-				navigate('/contact');
-				break;
-			}
+	const serviceLinks = {
+		'Visa-Services': '/contact',
+		'International-Flights': '/contact',
+		'Corporate-Travel-Desk': '/contact',
+		'Luxury-Cruises': '/contact',
+		'Attestation Services': '/contact',
+		'Cab-Service': '/contact',
+	};
+
+	const navigateToPage = (service) => {
+		const link = serviceLinks[service];
+		if (link) {
+			navigate(link);
 		}
 	};
 	return (
@@ -69,7 +50,11 @@ function ServicesPage() {
 					<div
 						className='tile'
 						onClick={() => navigateToPage('Visa-Services')}>
-						<img src='./assets/Visa.jpg' alt='Visa Services' />
+						<img
+							src='./assets/Visa.jpg'
+							alt='Visa Services'
+							loading='lazy'
+						/>
 						<div className='text'>
 							<h1>Visa Services</h1>
 							<h2 className='animate-text'>
@@ -89,6 +74,7 @@ function ServicesPage() {
 						<img
 							src='./assets/international-flight.jpg'
 							alt='International Flights'
+							loading='lazy'
 						/>
 						<div className='text'>
 							<h1>International Flights</h1>
@@ -110,6 +96,7 @@ function ServicesPage() {
 						<img
 							src='./assets/business-class.jpg'
 							alt='Corporate Travel Desk'
+							loading='lazy'
 						/>
 						<div className='text'>
 							<h1>Corporate Travel Desk</h1>
@@ -129,7 +116,11 @@ function ServicesPage() {
 					<div
 						className='tile'
 						onClick={() => navigateToPage('Luxury-Cruises')}>
-						<img src='./assets/ship.jpg' alt='Luxury Cruises' />
+						<img
+							src='./assets/ship.jpg'
+							alt='Luxury Cruises'
+							loading='lazy'
+						/>
 						<div className='text'>
 							<h1>Luxury Cruises</h1>
 							<h2 className='animate-text'>
@@ -149,6 +140,7 @@ function ServicesPage() {
 						<img
 							src='./assets/attest.jpg'
 							alt='Attestation Services'
+							loading='lazy'
 						/>
 						<div className='text'>
 							<h1>Attestation Services</h1>
@@ -166,7 +158,11 @@ function ServicesPage() {
 					<div
 						className='tile'
 						onClick={() => navigateToPage('Cab-Service')}>
-						<img src='./assets/Cab.jpg' alt='Cab Service' />
+						<img
+							src='./assets/Cab.jpg'
+							alt='Cab Service'
+							loading='lazy'
+						/>
 						<div className='text'>
 							<h1>Cab Service</h1>
 							<h2 className='animate-text'>

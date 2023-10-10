@@ -1,9 +1,4 @@
 .services-main-div {
-	/* background-image: url('./assets/services5.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center; */
 	background-color: rgb(56, 56, 56, 0.5);
 	background-blend-mode: overlay;
 	height: 80dvh;
