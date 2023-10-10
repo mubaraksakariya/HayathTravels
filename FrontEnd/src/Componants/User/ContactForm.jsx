@@ -49,7 +49,7 @@ function ContactForm() {
 						<div className=''>
 							<button
 								type='submit'
-								className='contact-submit-button btn btn-lg btn-outline-success px-4'>
+								className='contact-submit-button btn btn-lg btn-outline-warning px-4'>
 								send
 							</button>
 						</div>

@@ -1,126 +1,126 @@
-.gallery-main-div{
-    background-image: url("assets/gallery.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-	background-color: rgb(56, 56, 56,0.8);
+.gallery-main-div {
+	/* background-image: url('assets/gallery.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center; */
+	background-color: rgb(56, 56, 56, 0.5);
 	background-blend-mode: overlay;
-    height: 80dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 80dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.gallery-main-div h3{
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 89.6px;
+
+.gallery-main-div h3 {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 89.6px;
 }
-.gallery-content-div{
-    position: relative;
-    padding: 5%;
-    object-fit: cover;
+.gallery-content-div {
+	background-color: white;
+	position: relative;
+	padding: 5%;
+	object-fit: cover;
 }
-.gallery-bg-img{
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* filter: blur(25px); */
-    filter: brightness(40%);
-    /* filter: grayscale(100%); */ 
+.gallery-bg-img {
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* filter: blur(25px); */
+	filter: brightness(40%);
+	/* filter: grayscale(100%); */
 }
 
 .gallery-div {
-    display: flex;
-    gap: 5%;
-    
+	display: flex;
+	gap: 5%;
 }
 .folder-selection-div {
-    flex: 1; 
-    height: 100%;
-    overflow-y: auto;
-    height:40dvw;
-    padding: 2%;
+	flex: 1;
+	height: 100%;
+	overflow-y: auto;
+	height: 40dvw;
+	padding: 2%;
 }
-.folder-selection-div::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+.folder-selection-div::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
-	background-color: #F5F5F5;
+	background-color: #f5f5f5;
 }
 
-.folder-selection-div::-webkit-scrollbar{
+.folder-selection-div::-webkit-scrollbar {
 	width: 3px;
-	background-color: #F5F5F5;
+	background-color: #f5f5f5;
 }
 
-.folder-selection-div::-webkit-scrollbar-thumb{
+.folder-selection-div::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgb(0,172,170);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: rgb(0, 172, 170);
 }
 
 .slide-show-div {
-    flex: 5;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	flex: 5;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.slide-show{
-    width: 100%;
+.slide-show {
+	width: 100%;
 }
 @media (max-width: 768px) {
-    .gallery-main-div{
-        height: 50dvh;
-    }
-    .gallery-main-div h3{
-        font-size: 28px;
-    }
-    .gallery-content-div{
-        margin: 0% 0% 0% 0%;
-        padding: 10% 0 5% 0;
-    }
+	.gallery-main-div {
+		height: 50dvh;
+	}
+	.gallery-main-div h3 {
+		font-size: 28px;
+	}
+	.gallery-content-div {
+		margin: 0% 0% 0% 0%;
+		padding: 10% 0 5% 0;
+	}
 
-    .gallery-div {
-        flex-direction: column;
-        margin-top: 6%;
-        margin-bottom: 6%;
-    }
-    .folder-selection-div {
-        margin-top: 10%;
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 2%; 
-        scrollbar-width: thin; /* Firefox specific */
-    }
-    .folder-selection-div::-webkit-scrollbar {
-        height: 5px;
-    }
-    
-    .folder-selection-div::-webkit-scrollbar-thumb {
-        background-color: rgb(0, 172, 170); /* Color of the scrollbar thumb */
-        border-radius: 4px; /* Rounded corners of the thumb */
-    }
-    
-    .folder-selection-div::-webkit-scrollbar-track {
-        background-color: rgb(0, 0, 0,0.5); /* Color of the scrollbar track */
-    }
-    
-    .slide-show-div {
-        order: -1; /* Move .slide-show-div to the top */
-    }
-    .gallery-content-div{
-        position: relative;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-    }
+	.gallery-div {
+		flex-direction: column;
+		margin-top: 6%;
+		margin-bottom: 6%;
+	}
+	.folder-selection-div {
+		margin-top: 10%;
+		display: flex;
+		overflow-x: auto;
+		white-space: nowrap;
+		padding: 2%;
+		scrollbar-width: thin; /* Firefox specific */
+	}
+	.folder-selection-div::-webkit-scrollbar {
+		height: 5px;
+	}
+
+	.folder-selection-div::-webkit-scrollbar-thumb {
+		background-color: rgb(0, 172, 170); /* Color of the scrollbar thumb */
+		border-radius: 4px; /* Rounded corners of the thumb */
+	}
+
+	.folder-selection-div::-webkit-scrollbar-track {
+		background-color: rgb(0, 0, 0, 0.5); /* Color of the scrollbar track */
+	}
+
+	.slide-show-div {
+		order: -1; /* Move .slide-show-div to the top */
+	}
+	.gallery-content-div {
+		position: relative;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 }
