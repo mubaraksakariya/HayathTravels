@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css';
 import NavBar from '../../Componants/User/NavBar';
 import Footer from '../../Componants/User/Footer';
+import { contactUs } from '../../Componants/User/ContactForm';
 
 function Contact() {
 	return (
@@ -15,7 +16,7 @@ function Contact() {
 			<div className='contact-content-div'>
 				<div className='row justify-content-center align-items-start contact-top-div'>
 					<div className='col-md contact-form-div'>
-						<form>
+						<form onSubmit={contactUs}>
 							<div className='form-header'>
 								<h3 className='mb-3'>
 									WE'RE READY, LET'S TALK.
@@ -26,6 +27,7 @@ function Contact() {
 									type='text'
 									className='custom-input'
 									placeholder='Name'
+									name='name'
 								/>
 							</div>
 							<div className='mb-3'>
@@ -33,6 +35,7 @@ function Contact() {
 									type='text'
 									className='custom-input'
 									placeholder='Email/Phone'
+									name='email'
 								/>
 							</div>
 							<div className='mb-3'>
@@ -40,11 +43,12 @@ function Contact() {
 									type='text'
 									className='custom-input'
 									placeholder='Subject'
+									name='subject'
 								/>
 							</div>
 							<div className='mb-3'>
 								<textarea
-									name=''
+									name='message'
 									id=''
 									rows='5'
 									className='custom-input'

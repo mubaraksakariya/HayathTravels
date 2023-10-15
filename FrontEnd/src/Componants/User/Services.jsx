@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import './Services.css';
+import { useNavigate } from 'react-router-dom';
+
 function Services() {
+	const navigate = useNavigate();
 	const servicesData = [
 		{
 			id: 1,
@@ -59,7 +62,7 @@ function Services() {
 
 		observerRef.current = new IntersectionObserver(handleIntersection, {
 			root: null,
-			rootMargin: '-5px',
+			rootMargin: '-15px',
 			threshold: 0,
 		});
 
@@ -73,7 +76,10 @@ function Services() {
 			observerRef.current.disconnect();
 		};
 	}, []);
-
+	const manageLink = (item) => {
+		console.log(item);
+		navigate('/services');
+	};
 	return (
 		<div className='service-main-div'>
 			<div className='services-header mb-5'>
@@ -81,7 +87,10 @@ function Services() {
 			</div>
 			<section className='articles'>
 				{servicesData.map((service, index) => (
-					<article className='article-hidden' key={service.title}>
+					<article
+						className='article-hidden'
+						key={service.title}
+						onClick={() => manageLink(service.title)}>
 						<div className='article-wrapper'>
 							<figure>
 								<img
@@ -92,7 +101,7 @@ function Services() {
 							<div className='article-body'>
 								<h2>{service.title}</h2>
 								<p>{service.description}</p>
-								<a href='#' className='read-more'>
+								<a className='read-more'>
 									Read more{' '}
 									<span className='sr-only'>
 										about {service.title}

@@ -1,6 +1,17 @@
 import React from 'react';
 import './ContactForm.css';
 
+export const contactUs = (e) => {
+	e.preventDefault();
+	const formData = e.target;
+	const name = formData.name.value;
+	const email = formData.email.value;
+	const subject = formData.subject?.value;
+	const message = formData.message.value;
+	console.log(name, email, subject, message);
+	e.target.reset();
+};
+
 function ContactForm() {
 	return (
 		<div className='contactForm-top-div'>
@@ -13,7 +24,10 @@ function ContactForm() {
 					/>
 				</div>
 				<div className='col-md-6 d-flex justify-content-center align-items-center '>
-					<form action='' className='contact-form'>
+					<form
+						action=''
+						className='contact-form'
+						onSubmit={contactUs}>
 						<div className='mb-3 '>
 							<h3>Quick Enquiry</h3>
 						</div>
@@ -21,7 +35,7 @@ function ContactForm() {
 							<input
 								type='text'
 								className='form-control contact-input-feild'
-								name=''
+								name='name'
 								id=''
 								aria-describedby='helpId'
 								placeholder='Name'
@@ -31,7 +45,7 @@ function ContactForm() {
 							<input
 								type='text'
 								className='form-control contact-input-feild'
-								name=''
+								name='email'
 								id=''
 								aria-describedby='emailHelpId'
 								placeholder='Email/Phone'
@@ -40,7 +54,7 @@ function ContactForm() {
 						<div className='mb-3'>
 							<textarea
 								className='form-control contact-input-feild'
-								name=''
+								name='message'
 								id=''
 								rows='3'
 								placeholder='Message'
