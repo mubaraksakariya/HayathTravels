@@ -27,7 +27,7 @@ function ContactForm() {
 						action=''
 						className='contact-form2'
 						onSubmit={contactUs}>
-						<div className='mb-3 '>
+						<div className='mb-3'>
 							<h3>Quick Enquiry</h3>
 						</div>
 						<div className='row'>
@@ -58,7 +58,7 @@ function ContactForm() {
 								/>
 							</div>
 						</div>
-						<div className=''>
+						<div className='d-flex justify-content-center'>
 							<button
 								type='submit'
 								className='contact-submit-button btn btn-lg btn-outline-warning'>

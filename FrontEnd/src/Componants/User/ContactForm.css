@@ -10,7 +10,7 @@
 	width: 80%;
 	min-height: 50dvh;
 	overflow-y: hidden;
-	margin: 5%;
+	margin: 3%;
 	border-radius: 50px;
 	&::before {
 		position: absolute;
@@ -30,11 +30,15 @@
 }
 .contact-form2 {
 	position: absolute;
-	width: 70%;
+	width: 50%;
 	z-index: 3;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+.contact-form2 h3 {
+	font-size: 3rem;
+	margin-bottom: 5%;
 }
 .message-area {
 	resize: none;
@@ -49,11 +53,15 @@
 
 @media (max-width: 768px) {
 	.contact-div2 {
+		min-height: 70dvh;
 		width: 90%;
 		border-radius: 15px;
 	}
 	.contact-form2 {
 		width: 90%;
+	}
+	.contact-form2 h3 {
+		font-size: 2rem;
 	}
 	.input-div {
 		padding-right: 0%;
