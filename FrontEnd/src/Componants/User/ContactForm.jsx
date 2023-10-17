@@ -14,63 +14,61 @@ export const contactUs = (e) => {
 
 function ContactForm() {
 	return (
-		<div className='contactForm-top-div'>
-			<div className='row contact-div'>
-				<div className='col-md-6 contact-img-div'>
+		<>
+			<div className='contact-top-div2'>
+				<div className='contact-div2'>
 					<img
 						src='./assets/office.jpg'
 						alt=''
-						className='contact-img'
+						className='contact-us-img2'
 					/>
-				</div>
-				<div className='col-md-6 d-flex justify-content-center align-items-center '>
+
 					<form
 						action=''
-						className='contact-form'
+						className='contact-form2'
 						onSubmit={contactUs}>
 						<div className='mb-3 '>
 							<h3>Quick Enquiry</h3>
 						</div>
-						<div className='mb-3'>
-							<input
-								type='text'
-								className='form-control contact-input-feild'
-								name='name'
-								id=''
-								aria-describedby='helpId'
-								placeholder='Name'
-							/>
-						</div>
-						<div className='mb-3'>
-							<input
-								type='text'
-								className='form-control contact-input-feild'
-								name='email'
-								id=''
-								aria-describedby='emailHelpId'
-								placeholder='Email/Phone'
-							/>
-						</div>
-						<div className='mb-3'>
-							<textarea
-								className='form-control contact-input-feild'
-								name='message'
-								id=''
-								rows='3'
-								placeholder='Message'
-							/>
+						<div className='row'>
+							<div className='col-md mb-3 input-div'>
+								<input
+									type='text'
+									className='form-control'
+									placeholder='Name'
+									aria-label='Name'
+									name='name'
+								/>
+							</div>
+							<div className='col-md mb-3 input-div'>
+								<input
+									type='text'
+									className='form-control'
+									placeholder='Email/Phone'
+									aria-label='Email/Phone'
+									name='email'
+								/>
+							</div>
+							<div className='col-md-12 mb-3 input-div'>
+								<textarea
+									className='mb-3 message-area'
+									placeholder='Message'
+									id='floatingTextarea'
+									name='message'
+								/>
+							</div>
 						</div>
 						<div className=''>
 							<button
 								type='submit'
-								className='contact-submit-button btn btn-lg btn-outline-warning px-4'>
+								className='contact-submit-button btn btn-lg btn-outline-warning'>
 								send
 							</button>
 						</div>
 					</form>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

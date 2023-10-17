@@ -62,8 +62,8 @@ function Services() {
 
 		observerRef.current = new IntersectionObserver(handleIntersection, {
 			root: null,
-			rootMargin: '-15px',
-			threshold: 0,
+			rootMargin: '0px',
+			threshold: 0.2,
 		});
 
 		const articles = document.querySelectorAll('.article-hidden');

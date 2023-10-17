@@ -40,7 +40,7 @@ function Gallery() {
 				<NavBar />
 			</div>
 			<div className='gallery-main-div'>
-				<img src='assets/gallery.jpg' alt='' className='header-bg' />
+				<img src='assets/gallery2.jpg' alt='' className='header-bg' />
 				<h3>GALLERY</h3>
 			</div>
 			<div className='gallery-content-div'>

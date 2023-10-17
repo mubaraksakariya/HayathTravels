@@ -108,11 +108,11 @@ service-main-div {
 
 .articles {
 	display: grid;
-	max-width: 1200px;
+	max-width: 80%;
 	margin-inline: auto;
 	padding-inline: 24px;
-	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-	gap: 24px;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	gap: 10px;
 }
 
 @media screen and (max-width: 960px) {
@@ -121,6 +121,10 @@ service-main-div {
 	}
 	.article-body p {
 		display: none;
+	}
+	.articles {
+		max-width: 100%;
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -136,11 +140,11 @@ service-main-div {
 
 .article-hidden {
 	opacity: 0;
-	transform: translateY(50px); /* Initially, move the element 20px down */
+	transform: translateY(70px);
 	transition: opacity 0.4s, transform 0.7s ease-in-out;
 }
 
 .article-visible {
 	opacity: 1;
-	transform: translateY(0); /* Animate the element to its original position */
+	transform: translateY(0);
 }

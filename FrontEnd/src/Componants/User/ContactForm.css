@@ -1,70 +1,68 @@
-.contactForm-top-div {
-	background-color: white;
+.contact-top-div2 {
 	display: flex;
+	background-color: white;
 	justify-content: center;
 	align-items: center;
-	padding: 2% 2% 2% 2%;
-}
-.contact-div {
-	width: 90%;
-	background-color: rgb(0, 172, 170);
-	border-radius: 25px;
-}
-.contact-form {
-	width: 80%;
-}
-.contact-input-feild {
-	background-color: rgb(0, 172, 170);
-	margin-bottom: 5%;
-	border: none;
-	border-top: solid thin rgb(0, 172, 170);
-	border-right: solid thin rgb(0, 172, 170);
-	border-left: solid thin black;
-	border-bottom: solid thin black;
-}
-.contact-input-feild:focus {
-	background-color: rgb(0, 172, 170);
-	box-shadow: none;
-	border-top: solid thin rgb(0, 172, 170);
-	border-right: solid thin rgb(0, 172, 170);
-	border-left: solid 2px black;
-	border-bottom: solid 2px black;
-	outline: none;
 }
 
-.contact-submit-button {
-	border: 2px solid rgb(249, 204, 55);
-	color: rgb(249, 204, 55);
+.contact-div2 {
+	position: relative;
+	width: 80%;
+	min-height: 50dvh;
+	overflow-y: hidden;
+	margin: 5%;
+	border-radius: 50px;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
 }
-.contact-submit-button:hover {
-	background-color: rgb(249, 204, 55);
-	color: #fff;
-}
-.contact-img-div {
-	overflow: hidden;
-	padding: 0px;
-	border-radius: 25px 0 0 25px;
-}
-.contact-img {
+.contact-us-img2 {
+	position: absolute;
+	z-index: 0;
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Fill the image inside the div while maintaining aspect ratio */
+	object-fit: cover;
+}
+.contact-form2 {
+	position: absolute;
+	width: 70%;
+	z-index: 3;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.message-area {
+	resize: none;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	padding: 2%;
+}
+.contact-submit-button {
+	padding-inline: 3%;
 }
 
 @media (max-width: 768px) {
-	.contact-top-div {
-		background-color: white;
-		padding: 0;
+	.contact-div2 {
+		width: 90%;
+		border-radius: 15px;
 	}
-	.contact-form {
-		margin: 5%;
+	.contact-form2 {
+		width: 90%;
 	}
-	.contact-img-div {
-		display: none;
+	.input-div {
+		padding-right: 0%;
 	}
-	.contact-div {
+	.contact-form2 input {
 		width: 100%;
-		background-color: rgb(0, 172, 170);
-		border-radius: 0px;
+		padding-right: 0%;
+	}
+	.contact-submit-button {
+		padding-inline: 7%;
 	}
 }
