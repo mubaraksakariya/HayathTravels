@@ -3,7 +3,7 @@
 }
 .offer-header h1 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 34px;
+	font-size: 40px;
 	font-weight: 700;
 	line-height: 47.6px;
 	color: rgb(255, 255, 255);
@@ -38,10 +38,14 @@
 }
 
 @media (max-width: 768px) {
-	/* .offer-box-div {
-		padding: 25px;
-	} */
+	.offer-header h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 47.6px;
+		color: rgb(255, 255, 255);
+	}
 	.offer-main-div {
-		padding: 0 5% 0 5%;
+		padding: 15% 5% 10% 5%;
 	}
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavBar from '../../Componants/User/NavBar';
 import Footer from '../../Componants/User/Footer';
 import './ServicesPage.css';
@@ -6,6 +6,47 @@ import { useNavigate } from 'react-router-dom';
 
 function ServicesPage() {
 	const navigate = useNavigate();
+	const tilesRef = useRef([]);
+	const observer = useRef(null);
+
+	useEffect(() => {
+		// Initialize Intersection Observer
+		observer.current = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add(
+							'tile-animation-smallscreen',
+							'img-animation-smallscreen',
+							'text-animation-smallscreen'
+						);
+					} else {
+						entry.target.classList.remove(
+							'tile-animation-smallscreen',
+							'img-animation-smallscreen',
+							'text-animation-smallscreen'
+						);
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: '0px',
+				threshold: 1,
+			}
+		);
+
+		// Observe each tile element
+		tilesRef.current.forEach((tile) => {
+			observer.current.observe(tile);
+		});
+
+		// Cleanup observer on component unmount
+		return () => {
+			observer.current.disconnect();
+		};
+	}, []);
+
 	const serviceLinks = {
 		'Visa-Services': '/contact',
 		'International-Flights': '/contact',
@@ -21,6 +62,7 @@ function ServicesPage() {
 			navigate(link);
 		}
 	};
+
 	return (
 		<>
 			<div className='nav-bar'>
@@ -48,8 +90,8 @@ function ServicesPage() {
 				<div className='wrap'>
 					{/* Service 1: Visa Services */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('Visa-Services')}>
+						ref={(el) => (tilesRef.current[0] = el)}
+						className='tile'>
 						<img
 							src='./assets/Visa.jpg'
 							alt='Visa Services'
@@ -62,15 +104,22 @@ function ServicesPage() {
 								the expertise of our Visa specialists.
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('Visa-Services');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>
 
 					{/* Service 2: International Flights */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('International-Flights')}>
+						ref={(el) => (tilesRef.current[1] = el)}
+						className='tile'>
 						<img
 							src='./assets/international-flight.jpg'
 							alt='International Flights'
@@ -84,15 +133,22 @@ function ServicesPage() {
 								destinations.
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('International-Flights');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>
 
 					{/* Service 3: Corporate Travel Desk */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('Corporate-Travel-Desk')}>
+						ref={(el) => (tilesRef.current[2] = el)}
+						className='tile'>
 						<img
 							src='./assets/business-class.jpg'
 							alt='Corporate Travel Desk'
@@ -105,17 +161,22 @@ function ServicesPage() {
 								to understand your travel preferences.
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('Corporate-Travel-Desk');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>
-				</div>
 
-				<div className='wrap'>
 					{/* Service 4:  */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('Luxury-Cruises')}>
+						ref={(el) => (tilesRef.current[3] = el)}
+						className='tile'>
 						<img
 							src='./assets/ship.jpg'
 							alt='Luxury Cruises'
@@ -128,15 +189,22 @@ function ServicesPage() {
 								aboard the finest luxury Cruises
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('Luxury-Cruises');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>
 
 					{/* Service 5:  */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('Attestation Services')}>
+						ref={(el) => (tilesRef.current[4] = el)}
+						className='tile'>
 						<img
 							src='./assets/attest.jpg'
 							alt='Attestation Services'
@@ -149,15 +217,22 @@ function ServicesPage() {
 								document types and work diligently
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('Attestation Services');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>
 
 					{/* Service 6:  */}
 					<div
-						className='tile'
-						onClick={() => navigateToPage('Cab-Service')}>
+						ref={(el) => (tilesRef.current[5] = el)}
+						className='tile'>
 						<img
 							src='./assets/Cab.jpg'
 							alt='Cab Service'
@@ -170,7 +245,14 @@ function ServicesPage() {
 								exploring the city, count on us
 							</h2>
 							<p className='animate-text'>
-								<a href='/cab-service'>Learn more</a>
+								<a
+									href=''
+									onClick={(e) => {
+										e.preventDefault();
+										navigateToPage('Cab-Service');
+									}}>
+									Learn more
+								</a>
 							</p>
 						</div>
 					</div>

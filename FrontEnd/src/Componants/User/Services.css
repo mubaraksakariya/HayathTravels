@@ -96,13 +96,13 @@ article:has(:hover, :focus) {
 	box-sizing: border-box;
 }
 
-service-main-div {
+.service-main-div {
 	margin: 0;
 	padding: 48px 0;
 	font-family: 'Figtree', sans-serif;
 	font-size: 1.2rem;
 	line-height: 1.6rem;
-	background-image: linear-gradient(45deg, #7c9885, #b5b682);
+	/* background-image: linear-gradient(45deg, #7c9885, #7c7e02); */
 	min-height: 100vh;
 }
 
