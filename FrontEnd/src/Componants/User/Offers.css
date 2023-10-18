@@ -1,31 +1,48 @@
-.offer-header{
-    text-align: center;
+.offer-header {
+	text-align: center;
 }
 .offer-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 47.6px;
-    color: rgb(25, 25, 25);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 47.6px;
+	color: rgb(25, 25, 25);
 }
-.offer-main-div{
-    padding: 0 12% 0 12%;
+.offer-main-div {
+	padding: 0 3% 0 3%;
+	position: relative;
 }
-.card{
-    border: none;
+.card {
+	border: none;
 }
 .card img {
-    border-radius: 0%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	object-fit: contain;
+	width: auto;
+	height: 100%;
+	border-radius: 0%;
+	/* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
 }
-.offer-box-div{
-    padding: 5%;
+.offer-box-div {
+	padding: 0%;
 }
+
+.offer-box-div .card {
+	transition: transform 0.3s ease;
+	position: relative;
+	z-index: 1;
+}
+
+.offer-box-div .card:hover {
+	transform: scale(1.2);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	z-index: 2;
+}
+
 @media (max-width: 768px) {
-    .offer-box-div{
-        padding: 0px;
-    }
-    .offer-main-div{
-        padding: 0 5% 0 5%;
-    }
+	.offer-box-div {
+		padding: 0px;
+	}
+	.offer-main-div {
+		padding: 0 5% 0 5%;
+	}
 }

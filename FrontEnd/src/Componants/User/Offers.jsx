@@ -33,27 +33,27 @@ function Offers() {
 				<h1>SPECIAL PACKAGES</h1>
 			</div>
 			<hr className='colored-line' />
-			<div className='row justify-content-center align-items-top g-2 pt-4 w-100'>
+			<div className='row justify-content-center align-items-top g-1 pt-4 w-100'>
 				{allPackages &&
 					allPackages.map((item) => {
 						return (
 							<div
-								className='col-md-6 pt-0 offer-box-div'
+								className='col-md-3 pt-0 offer-box-div'
 								key={item.id}>
-								<div className='card pt-1 p-3'>
+								<div className='card pt-1 p-1'>
 									<img
 										src={item.imageUrl}
 										className='card-img-top'
 										alt='...'
 									/>
-									<div className='card-body'>
+									{/* <div className='card-body'>
 										<h5 className='card-title'>
 											{item.heading}
 										</h5>
 										<p className='card-text'>
 											{item.description}
 										</p>
-									</div>
+									</div> */}
 								</div>
 							</div>
 						);

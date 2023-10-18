@@ -15,7 +15,7 @@ article {
 	box-shadow: none;
 	background: #fff;
 	transform-origin: center;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.1s ease-in-out;
 	overflow: hidden;
 }
 
