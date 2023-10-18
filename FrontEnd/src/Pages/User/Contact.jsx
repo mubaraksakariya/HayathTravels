@@ -11,6 +11,7 @@ function Contact() {
 				<NavBar />
 			</div>
 			<div className='contact-main-div'>
+				<img src='./assets/contact6.jpg' alt='' className='header-bg' />
 				<h3>CONTACT US</h3>
 			</div>
 			<div className='contact-content-div'>

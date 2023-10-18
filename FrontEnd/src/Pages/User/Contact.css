@@ -1,10 +1,10 @@
 .contact-main-div {
-	background-image: url('./assets/contact6.jpg');
+	/* background-image: url('./assets/contact6.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	background-position: center center;
-	background-color: rgb(56, 56, 56, 0.8);
+	background-position: center center; */
+	background-color: rgb(56, 56, 56, 0.5);
 	background-blend-mode: overlay;
 	height: 80dvh;
 	display: flex;
@@ -25,7 +25,8 @@
 .contact-content-div {
 	display: flex;
 	justify-content: center;
-	margin: 6% 0 6% 0;
+	padding: 6% 0 6% 0;
+	background-color: white;
 }
 .contact-top-div {
 	width: 70%;
