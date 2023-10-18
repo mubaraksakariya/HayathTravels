@@ -102,7 +102,7 @@ function Services() {
 								<h2>{service.title}</h2>
 								<p>{service.description}</p>
 								<a className='read-more'>
-									Read more{' '}
+									Learn more...{' '}
 									<span className='sr-only'>
 										about {service.title}
 									</span>

@@ -30,7 +30,7 @@
 }
 .contact-form2 {
 	position: absolute;
-	width: 50%;
+	width: 60%;
 	z-index: 3;
 	top: 50%;
 	left: 50%;
@@ -51,14 +51,14 @@
 	padding-inline: 3%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
 	.contact-div2 {
-		min-height: 70dvh;
+		min-height: 60dvh;
 		width: 90%;
 		border-radius: 15px;
 	}
 	.contact-form2 {
-		width: 90%;
+		width: 70%;
 	}
 	.contact-form2 h3 {
 		font-size: 2rem;

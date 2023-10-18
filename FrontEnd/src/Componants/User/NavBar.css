@@ -1,42 +1,42 @@
 .navbar-top-div {
-  background-color:rgba(64, 64, 64, 0.5); 
-  top: 0;
-  width: 100%;
-  z-index: 999;
+	background-color: rgba(64, 64, 64, 0.5);
+	top: 0;
+	width: 100%;
+	z-index: 999;
 }
-.nav-item{
-  cursor: pointer;
-  font-size: large;
-  height: 100%;
+.nav-item {
+	cursor: pointer;
+	font-size: large;
+	height: 100%;
 }
 .nav-link {
-  color: white;
+	color: white;
 }
-.Logo-img{
-  width: 200px;
+.Logo-img {
+	width: 200px;
 }
-.current-page{
-  color: rgb(249,204,55);
-  font-weight: bold;
+.current-page {
+	color: rgb(249, 204, 55);
+	font-weight: bold;
 }
-@media (max-width: 768px) {
-  .nav-item{
-      font-size:medium;
-    }
-    .navbar-brand{
-      font-size:large;
-    }
-    .navbar-top-div {
-      position: static;
-      background-color: rgba(255, 255, 255, 255); 
-      top: 0;
-      width: 100%;
-      z-index: 999;
-    }
-    .nav-item a {
-      color: black;
-    }
-    .active{
-      font-weight: bold;
-    }
+@media (max-width: 960px) {
+	.nav-item {
+		font-size: medium;
+	}
+	.navbar-brand {
+		font-size: large;
+	}
+	.navbar-top-div {
+		position: static;
+		background-color: rgba(255, 255, 255, 255);
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+	.nav-item a {
+		color: black;
+	}
+	.active {
+		font-weight: bold;
+	}
 }

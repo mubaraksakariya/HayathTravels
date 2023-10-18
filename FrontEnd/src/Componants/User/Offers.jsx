@@ -33,12 +33,12 @@ function Offers() {
 				<h1>SPECIAL PACKAGES</h1>
 			</div>
 			<hr className='colored-line' />
-			<div className='row justify-content-center align-items-top g-1 pt-4 w-100'>
+			<div className='row justify-content-around align-items-top g-1 mt-4'>
 				{allPackages &&
 					allPackages.map((item) => {
 						return (
 							<div
-								className='col-md-3 pt-0 offer-box-div'
+								className='col-lg-3 col-md-6 p-1 offer-box-div'
 								key={item.id}>
 								<div className='card pt-1 p-1'>
 									<img

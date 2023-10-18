@@ -74,9 +74,7 @@ const Home = () => {
 						</a>
 					</div>
 				</div>
-				<div className='home-content-div-2'>
-					<Offers />
-				</div>
+				<Offers />
 			</div>
 			<Footer />
 		</div>
