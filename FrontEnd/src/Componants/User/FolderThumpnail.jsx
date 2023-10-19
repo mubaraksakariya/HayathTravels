@@ -8,6 +8,7 @@ const FolderThumpnail = ({ folder, setFolderView }) => {
 	};
 
 	const handleFolderClick = () => {
+		console.log('folder clicked');
 		setFolderView(folder);
 	};
 
@@ -15,7 +16,8 @@ const FolderThumpnail = ({ folder, setFolderView }) => {
 		<div
 			className='folder-thumb-div'
 			style={divStyle}
-			onClick={handleFolderClick}>
+			onClick={handleFolderClick}
+			onTouchStart={handleFolderClick}>
 			<div className='folder-overlay'></div>
 			<h4 className='folder-thumb-h4'>{folder.folderName}</h4>
 		</div>
