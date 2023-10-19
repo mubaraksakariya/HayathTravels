@@ -8,7 +8,6 @@ const FolderThumpnail = ({ folder, setFolderView }) => {
 	};
 
 	const handleFolderClick = () => {
-		console.log('folder clicked');
 		setFolderView(folder);
 	};
 
