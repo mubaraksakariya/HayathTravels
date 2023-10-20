@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Enquiries.css';
 import AdminNavBar from '../../Componants/Admin/AdminNavBar';
-import { collection, getDocs, orderBy } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { useFirebaseDb } from '../../Context/FirebaseContext';
 
 function Enquiries() {
@@ -10,10 +10,11 @@ function Enquiries() {
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
 		const fetchData = async () => {
-			const querySnapshot = await getDocs(
+			const q = query(
 				collection(db, 'mail'),
 				orderBy('createdAt', 'desc')
 			);
+			const querySnapshot = await getDocs(q);
 			const documents = [];
 			querySnapshot.forEach((doc) => {
 				const data = doc.data();
