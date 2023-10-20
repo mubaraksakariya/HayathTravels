@@ -1,0 +1,23 @@
+.loading-screen {
+	min-height: 80dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+.message-top-div {
+	display: flex;
+	gap: 2%;
+	padding: 5%;
+	flex-wrap: wrap;
+}
+.message-div {
+	/* padding: 3%; */
+	min-width: 18rem;
+	max-width: 18rem;
+	max-height: 300px;
+	overflow: scroll;
+	/* border: solid rgb(70, 63, 63);
+	color: white;
+	text-wrap: wrap; */
+}

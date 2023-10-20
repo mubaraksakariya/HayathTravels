@@ -1,7 +1,7 @@
 import React from 'react';
 import './ContactForm.css';
 import { useFirebaseDb } from '../../Context/FirebaseContext';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 export const contactUs = (db, data) => {
 	console.log(data);
@@ -13,6 +13,7 @@ export const contactUs = (db, data) => {
 			text: data.message,
 			html: `from : ${data.email}<br>message : ${data.message}`,
 		},
+		createdAt: serverTimestamp(),
 	})
 		.then((res) => {
 			console.log(res);

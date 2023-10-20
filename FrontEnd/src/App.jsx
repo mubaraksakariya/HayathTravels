@@ -18,6 +18,7 @@ import {
 import Gallery from './Pages/User/Gallery';
 import GalleryManager from './Pages/Admin/GalleryManager';
 import NotFound from './Pages/NotFound';
+import Enquiries from './Pages/Admin/Enquiries';
 
 function App() {
 	return (
@@ -53,6 +54,7 @@ function Admin() {
 				<Route path='/' element={<AdminLogin />} />
 				<Route path='/packages' element={<Packages />} />
 				<Route path='/gallerymanager' element={<GalleryManager />} />
+				<Route path='/enquiries' element={<Enquiries />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</AuthProvider>
