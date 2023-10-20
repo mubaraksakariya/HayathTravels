@@ -3,8 +3,29 @@ import './Contact.css';
 import NavBar from '../../Componants/User/NavBar';
 import Footer from '../../Componants/User/Footer';
 import { contactUs } from '../../Componants/User/ContactForm';
+import { useFirebaseDb } from '../../Context/FirebaseContext';
 
 function Contact() {
+	const db = useFirebaseDb();
+	const formSubmit = (e) => {
+		e.preventDefault();
+		const formData = e.target;
+		const name = formData.name.value;
+		const email = formData.email.value;
+		const subject = formData.subject
+			? formData.subject.value
+			: 'Contact us message';
+		const message = formData.message.value;
+		console.log(name, email, subject, message);
+		const data = {
+			name,
+			email,
+			subject,
+			message,
+		};
+		contactUs(db, data);
+		e.target.reset();
+	};
 	return (
 		<>
 			<div className='nav-bar'>
@@ -17,7 +38,7 @@ function Contact() {
 			<div className='contact-content-div'>
 				<div className='row justify-content-center align-items-start contact-top-div'>
 					<div className='col-md contact-form-div'>
-						<form onSubmit={contactUs}>
+						<form onSubmit={formSubmit}>
 							<div className='form-header'>
 								<h3 className='mb-3'>
 									WE'RE READY, LET'S TALK.

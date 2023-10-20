@@ -1,18 +1,49 @@
 import React from 'react';
 import './ContactForm.css';
+import { useFirebaseDb } from '../../Context/FirebaseContext';
+import { addDoc, collection } from 'firebase/firestore';
 
-export const contactUs = (e) => {
-	e.preventDefault();
-	const formData = e.target;
-	const name = formData.name.value;
-	const email = formData.email.value;
-	const subject = formData.subject?.value;
-	const message = formData.message.value;
-	console.log(name, email, subject, message);
-	e.target.reset();
+export const contactUs = (db, data) => {
+	console.log(data);
+	addDoc(collection(db, 'mail'), {
+		to: ['travelshayath@gmail.com'],
+		message: {
+			subject: data.subject,
+			from: data.email,
+			text: data.message,
+			html: `from : ${data.email}<br>message : ${data.message}`,
+		},
+	})
+		.then((res) => {
+			console.log(res);
+			alert('Your message have been sent !!');
+		})
+		.catch((error) => {
+			console.error('Error adding document: ', error);
+		});
 };
 
 function ContactForm() {
+	const db = useFirebaseDb();
+	const formSubmit = (e) => {
+		e.preventDefault();
+		const formData = e.target;
+		const name = formData.name.value;
+		const email = formData.email.value;
+		const subject = formData.subject
+			? formData.subject.value
+			: 'Contact us message';
+		const message = formData.message.value;
+		// console.log(name, email, subject, message);
+		const data = {
+			name,
+			email,
+			subject,
+			message,
+		};
+		contactUs(db, data);
+		e.target.reset();
+	};
 	return (
 		<>
 			<div className='contact-top-div2'>
@@ -26,7 +57,7 @@ function ContactForm() {
 					<form
 						action=''
 						className='contact-form2'
-						onSubmit={contactUs}>
+						onSubmit={formSubmit}>
 						<div className='mb-3'>
 							<h3>Quick Enquiry</h3>
 						</div>
