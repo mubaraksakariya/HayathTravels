@@ -10,6 +10,7 @@ export const contactUs = (db, data) => {
 		message: {
 			subject: data.subject,
 			from: data.email,
+			name: data.name,
 			text: data.message,
 			html: `from : ${data.email}<br>message : ${data.message}`,
 		},

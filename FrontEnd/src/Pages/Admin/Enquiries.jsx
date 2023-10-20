@@ -55,7 +55,11 @@ function Enquiries() {
 								<div
 									key={item.id}
 									className='card message-div text-bg-dark mb-3'>
+									{/* <div className='card-header '>
+										{item.message.from}
+									</div> */}
 									<div className='card-header bg-transparent border-success'>
+										{item.message.name} -{' '}
 										{item.message.from}
 									</div>
 									<div className='card-body'>
