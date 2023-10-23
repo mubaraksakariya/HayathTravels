@@ -6,12 +6,16 @@ import {
 } from '../../Context/FirebaseContext';
 import {
 	collection,
+	deleteDoc,
 	doc,
 	getCountFromServer,
+	getDocs,
 	query,
 	setDoc,
 	where,
 } from 'firebase/firestore';
+import { confirmAlert } from 'react-confirm-alert';
+import { deleteObject, ref } from 'firebase/storage';
 
 function Folder({ folder, setViewFolder, setForceUpdate }) {
 	const db = useFirebaseDb();
@@ -45,8 +49,40 @@ function Folder({ folder, setViewFolder, setForceUpdate }) {
 		e.target.reset();
 		e.target.close.click();
 	};
-	const FolderDelete = () => {
-		console.log('delete', folder.id);
+	const ConfirmDelete = () => {
+		confirmAlert({
+			title: 'Delete this folder ?',
+			message: 'All data inside this folder will be deleted',
+			buttons: [
+				{
+					label: 'Yes',
+					onClick: () =>
+						FolderDelete().then(() => {
+							console.log('all done');
+							setForceUpdate((old) => !old);
+						}),
+				},
+				{
+					label: 'No',
+					onClick: () => alert('Click No'),
+				},
+			],
+		});
+		const FolderDelete = async () => {
+			const galleryQuery = query(
+				collection(db, 'Gallery'),
+				where('folderId', '==', folder.id)
+			);
+			const gallerySnapshot = await getDocs(galleryQuery);
+			gallerySnapshot.forEach(async (doc) => {
+				const imageRef = ref(storage, doc.data().imageId);
+				deleteObject(imageRef).then(() => {
+					deleteDoc(doc.ref);
+				});
+			});
+
+			await deleteDoc(doc(db, 'Gallery_Folders', folder.id));
+		};
 	};
 
 	return (
@@ -76,7 +112,7 @@ function Folder({ folder, setViewFolder, setForceUpdate }) {
 					<li>
 						<a
 							className='dropdown-item link-danger'
-							onClick={FolderDelete}>
+							onClick={ConfirmDelete}>
 							Delete
 						</a>
 					</li>

@@ -18,12 +18,7 @@
 .folder-text p {
 	font-size: small;
 }
-/* .folder:hover {
-	background-color: grey;
-} */
-/* .folder:hover .folder-text {
-	color: black;
-} */
+
 .folder i:hover {
 	cursor: pointer;
 	color: grey;
@@ -36,6 +31,9 @@
 }
 .folder-options i {
 	font-size: 1.5rem;
+}
+.dropdown-item {
+	cursor: pointer;
 }
 @media screen and (max-width: 768px) {
 	.folder {

@@ -79,7 +79,12 @@ function GalleryManager() {
 				<div className='centered-hr-div'>
 					<hr className='centered-hr'></hr>
 				</div>
-				{viewFolder && <FolderManager folder={viewFolder} />}
+				{viewFolder && (
+					<FolderManager
+						folder={viewFolder}
+						setForceUpdate={setForceUpdate}
+					/>
+				)}
 			</div>
 
 			{/* Model for new folder creation */}
